@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    .main.container
+        .row
+            .col.s12.offset-m3.m5.offset-l3.l5.offset-xl3.xl5.formUser
+                h3.display-4.m-b-2 Login Usuarios
+                    form(method='POST' action='/savelogin')
+                        div.form-group
+                            label(for='name') Usuario:
+                            input#name.form-control(type='text',  name='name')
+                        div.form-group
+                            label(for='password') Contraseña:
+                            input#password.form-control(type='password',  name='pass')
+                        button.btn.btn-primary.register(type='submit') Login

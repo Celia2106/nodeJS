@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    .main.container
+        .row
+            .col.s12.offset-m3.m5.offset-l3.l5.offset-xl3.xl5.formUser
+                h3.display-4.m-b-2 #{title}
+                    form(method='POST' action='/updateuser')
+                        div.form-group
+                            label(for='name') Usuario:
+                            input#name.form-control(type='text',  name='name')
+                        div.form-group
+                            label(for='password') Contraseña:
+                            input#password.form-control(type='password',  name='pass')
+                        div.form-group
+                            label(for='typeUser') Tipo Usuario:
+                            select#typeUser.form-control(name='typeUser')
+                                option(value="admin") Admin
+                                option(value="user") User
+                        button.btn.btn-primary.register(type='submit') Guardar Cambios

@@ -1,0 +1,35 @@
+extends layout
+block content
+      p Usuario: #{title}
+
+
+        -
+          const aMenu = [
+            {
+              'lab': 'Inicio',
+              'val': '/'
+            },
+            {
+              'lab': 'Login',
+              'val': '/login'
+            },
+          {
+          'lab': 'Registro',
+          'val': '/register'
+          },{
+          'lab': 'Actualización',
+          'val': '/update'
+          },{
+                   'lab': 'Borrado Usuarios',
+                   'val': '/delete'
+                 }
+          ]
+        block content
+            div
+
+
+                .menu-container
+                  ul.menu
+            each iMenu in aMenu
+                      li
+                        a(href=iMenu.val)= iMenu.lab
